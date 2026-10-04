@@ -13,7 +13,7 @@ Y = muhammad .
 
 36 ?- parent(ahmad, X), female(X).
 X = sara ;
-X = nora ;
+X = nora.
 
 37 ?- parent(X, ahmad), parent(X, muhammad).
 X = ali.
