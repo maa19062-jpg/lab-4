@@ -1,0 +1,54 @@
+Lab 4 Task 1
+
+1. Query:
+   ?- house = house.
+   Result: true.
+   Explanation: Both terms are the same atom, so they unify.
+
+2. Query:
+   ?- house = abc.
+   Result: false.
+   Explanation: Different atoms cannot unify.
+
+3. Query:
+   ?- edge(a,b) = edge(C,b).
+   Result: C = a.
+   Explanation: Both terms have the same functor and arity. C unifies
+   with a, and b unifies with b.
+
+4. Query:
+   ?- edge(a,d) = edge(C,B).
+   Result: C = a, B = d.
+   Explanation: Corresponding arguments unify by binding C to a and B to d.
+
+5. Query:
+   ?- edge(C,B) = edge(a,d).
+   Result: C = a, B = d.
+   Explanation: Unification works in either direction. C matches a and B matches d.
+
+6. Query:
+   ?- edge(A,f(g,h)) = edge(a,B).
+   Result: A = a, B = f(g,h).
+   Explanation: A unifies with a. B unifies with the whole compound term f(g,h).
+
+7. Query:
+   ?- edge(A,A) = edge(b,c).
+   Result: false.
+   Explanation: The same variable A would have to equal both b and c.
+   Since b and c are different atoms, unification fails.
+
+8. Query:
+   ?- edge(A,A) = edge(b,b).
+   Result: A = b.
+   Explanation: Both occurrences of A can consistently unify with b.
+
+9. Query:
+   ?- A = B, B = f.
+   Result: A = B, B = f.
+   Explanation: A and B are linked. Binding B to f also binds A to f.
+
+10. Query:
+    ?- A = B, B = f, A = e.
+    Result: false.
+    Explanation: A and B first become f. The final goal then tries to
+    unify f with e, which fails because they are different atoms.

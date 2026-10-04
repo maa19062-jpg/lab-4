@@ -1,0 +1,22 @@
+Lab 4 Task 2
+
+33 ?- female(X).
+X = sara ;
+X = nora.
+
+34 ?- male(_).
+true .
+
+35 ?- parent(X, Y), parent(Y, faisal).
+X = ali,
+Y = muhammad .
+
+36 ?- parent(ahmad, X), female(X).
+X = sara ;
+X = nora ;
+
+37 ?- parent(X, ahmad), parent(X, muhammad).
+X = ali.
+
+38 ?- parent(X, khan), parent(X, nora), male(khan), khan \= nora.
+X = ahmad.
